@@ -9,7 +9,8 @@ angular.module('listperson', ['ngRoute'])
         });
 
         $routeProvider.when('/person/create', {
-            templateUrl:'partials/cadastro.html'
+            templateUrl:'partials/cadastro.html',
+            controller:'CadastroController'
         });
 
         $routeProvider.otherwise({

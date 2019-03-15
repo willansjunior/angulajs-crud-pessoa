@@ -1,8 +1,29 @@
 <div class="jumbotron">
         <h1 class="text-center">Lista de Pessoas</h1>
 </div>
+
+<p ng-show="mensagem.length" class="alert alert-info">
+    {{mensagem}}
+</p>
+
+<div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a href="/person/create" class="btn btn-primary" type="button">
+                            Cadastrar Pessoa
+                        </a>
+                    </span>
+                    
+                </div> 
+            </form>
+        </div>
+    </div>
 <div ng-repeat="person in persons" class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">{{person.name}}</h3>
     </div>
+    <a class="btn btn-primary" href="">Editar</a>
+    <button class="btn btn-danger" ng-click="remove(person)">Remover</button>
 </div>

@@ -1,1 +1,56 @@
-<h1>Cadastro de Pessoa</h1>
+
+
+    <div class="page-header text-center">
+        <h1>Cadastro de Pessoa</h1>
+    </div>
+
+    <p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    
+    <form novalidate name="formulario" class="row" ng-submit="submeter()">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nome</label>
+                <input name="name" ng-model="person.name" class="form-control" required>
+                <span ng-show="formulario.$submitted && formulario.name.$error.required" class="form-control alert-danger">
+                    Nome obrigatório
+                </span>    
+            </div>
+            <div class="form-group">
+                <label>Logradouro</label>
+                <input name="street" ng-model="person.street" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Número</label>
+                <input name="number" ng-model="person.number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Bairro</label>
+                <input name="neighborhood" ng-model="person.neighborhood" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Cidade</label>
+                <input name="city" ng-model="person.city" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>UF</label>
+                <input name="state" ng-model="person.state" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Telefone Celular</label>
+                <input name="cellphone" ng-model="person.cellphone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Telefone Fixo</label>
+                <input name="phone" ng-model="person.phone" class="form-control">
+            </div>
+    
+            <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+                Salvar
+            </button>
+             <a href="/" class="btn btn-primary">Voltar</a>
+            <hr>
+        </div>
+        <div class="col-md-6">
+            <minha-foto></minha-foto>
+        </div>
+    </form>
